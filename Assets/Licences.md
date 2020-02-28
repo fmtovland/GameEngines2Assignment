@@ -5,3 +5,4 @@ Creative Commons:
 
 TurboSquid Royalty Free License:
 	Jet Fighter model from turbosquid.com by sender pinarci: https://www.turbosquid.com/FullPreview/Index.cfm/ID/796916
+	pyramid model from turbosquid.com by jesusgeek94: https://turbosquid.com/FullPreview/Index.cfm/ID/381762

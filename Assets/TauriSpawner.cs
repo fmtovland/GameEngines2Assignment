@@ -80,6 +80,7 @@ public class TauriSpawner : MonoBehaviour
 		}
 
 		ship.body.transform.position=pos;
+		ship.body.transform.LookAt(new Vector3(0,0,0));
 		ships.Add(ship);
 	}
 
