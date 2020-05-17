@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2758088311039678766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297609634694996794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f637b14da52b9558d5c249db2fc98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  target: {x: 0, y: 300, z: 0}
+  slowingDistance: 10
 --- !u!114 &2883459987722157827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,12 +31,13 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 5
+  maxSpeed: 50
   maxForce: 10
   speed: 0
   banking: 0.1
   damping: 0.1
-  influencers: []
+  influencers:
+  - {fileID: 2758088311039678766}
 --- !u!1001 &1614466086428342835
 PrefabInstance:
   m_ObjectHideFlags: 0

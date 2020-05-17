@@ -9,8 +9,14 @@ public class Arrive : Influencer
 
 	public override Vector3 GetForce(Boid boid)
 	{
+		slowingDistance = 10 + boid.speed;
 		Vector3 toTarget = target - boid.transform.position;
 		float dist = toTarget.magnitude;
+		if(dist<.1f)
+		{
+			boid.velocity=Vector3.zero;
+			return Vector3.zero;
+		}
 
 		float ramped = (dist / slowingDistance) * boid.maxSpeed;
 		float clamped = Mathf.Min(ramped, boid.maxSpeed);

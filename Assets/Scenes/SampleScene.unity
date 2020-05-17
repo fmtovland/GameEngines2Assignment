@@ -224,6 +224,8 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194232}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -308,9 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f8242528d7c14118750e3980433fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   offset: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  arriver: {fileID: 963194232}
+  seeker: {fileID: 963194231}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,13 +331,42 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 5
+  maxSpeed: 75
   maxForce: 10
   speed: 0
   banking: 0.1
   damping: 0.1
   influencers:
   - {fileID: 963194229}
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf27ea76d81f32d82b3f4105d9bb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  target: {x: 0, y: 0, z: 0}
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f637b14da52b9558d5c249db2fc98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  target: {x: 0, y: 0, z: 0}
+  slowingDistance: 50
 --- !u!1 &1192306142
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +401,7 @@ MonoBehaviour:
   maxJetOffset: 200
   prometheus_maxspeed: 100
   jet_maxspeed: 80
-  hatak_sg1_maxspeed: 0
+  hatak_sg1_maxspeed: 75
   SG1_spawnpoint: {x: 1000, y: 300, z: 0}
   Prometheus_spawnpoint: {x: 0, y: 300, z: -2000}
   camera: {fileID: 963194225}

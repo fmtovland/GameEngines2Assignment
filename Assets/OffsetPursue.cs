@@ -6,14 +6,16 @@ public class OffsetPursue : Influencer
 {
 	public Vector3 offset;
 	public GameObject target;
+	public Arrive arriver;
 
 	public override Vector3 GetForce(Boid boid)
 	{
-		Vector3 toTarget = target.transform.position - boid.transform.position + offset;
-		Vector3 desired = toTarget.normalized * boid.maxSpeed;
-		float distanceToTarget = Vector3.Distance(toTarget,boid.transform.position);
+		Vector3 desired = Vector3.zero;
+		Vector3 v = target.transform.position + offset;
 
-		if(distanceToTarget>1) return desired - boid.velocity;
-		else return Vector3.zero;
+		arriver.target = v;
+		desired+=arriver.GetForce(boid);
+
+		return desired-boid.velocity;
 	}
 }
