@@ -56,7 +56,6 @@ MonoBehaviour:
   banking: 0.1
   damping: 0.1
   influencers:
-  - {fileID: 3213512293594065830}
   - {fileID: 6045055278834927409}
 --- !u!114 &6045055278834927409
 MonoBehaviour:
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  target: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 350, z: 0}
   slowingDistance: 10
 --- !u!114 &3213512293594065830
 MonoBehaviour:

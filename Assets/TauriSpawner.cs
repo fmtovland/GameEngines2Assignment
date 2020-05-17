@@ -49,6 +49,7 @@ public class TauriSpawner : MonoBehaviour
 		//spawnShips();
 		camOffsetPursue=camera.GetComponent<OffsetPursue>();
 		camera.transform.position=ships[0].body.transform.position + cameraParams[ShipClass.hatak_sg1];
+		ships[0].body.GetComponentInChildren<OnEnterOutpostTriggerzone>().ts=this;
 		changeSpectateTarget(true);
 	}
 
@@ -107,7 +108,7 @@ public class TauriSpawner : MonoBehaviour
 		ships.Add(ship);
 	}
 
-	void spawnShips()
+	public void spawnShips()
 	{
 		addShip(ShipClass.prometheus,Prometheus_spawnpoint);
 		for(int i=0; i<jetCount; i++)
