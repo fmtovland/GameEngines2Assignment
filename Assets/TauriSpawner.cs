@@ -20,9 +20,13 @@ public class TauriSpawner : MonoBehaviour
 	public float prometheus_maxspeed;
 	public float jet_maxspeed;
 	public float hatak_sg1_maxspeed;
+	
+	public Vector3 SG1_spawnpoint;
+	public Vector3 Prometheus_spawnpoint;
 
 	public GameObject camera;
 	int cameraTarget=-1;
+	OffsetPursue camOffsetPursue;
 
 	public List<Ship> ships=new List<Ship>();
 
@@ -41,7 +45,10 @@ public class TauriSpawner : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		spawnShips();
+		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
+		//spawnShips();
+		camOffsetPursue=camera.GetComponent<OffsetPursue>();
+		camera.transform.position=ships[0].body.transform.position + cameraParams[ShipClass.hatak_sg1];
 		changeSpectateTarget(true);
 	}
 
@@ -62,8 +69,8 @@ public class TauriSpawner : MonoBehaviour
 		else cameraTarget %= s;
 
 		Ship ship = ships[(int)cameraTarget];
-		camera.transform.parent=ship.body.transform;
-		camera.transform.position=cameraParams[ship.type]+ship.body.transform.position;
+		camOffsetPursue.target=ship.body;
+		camOffsetPursue.offset=cameraParams[ship.type];
 	}
 
 	void addShip(ShipClass sc,Vector3 pos)
@@ -93,28 +100,24 @@ public class TauriSpawner : MonoBehaviour
 
 			default:
 				Debug.Log("Tried to instanciate unimplemeted ship");
-				//return;
-				break;
+				return;
 		}
 
 		ship.body.transform.position=pos;
-		ship.body.transform.LookAt(new Vector3(0,0,0));
 		ships.Add(ship);
 	}
 
 	void spawnShips()
 	{
-		addShip(ShipClass.prometheus,transform.position);
+		addShip(ShipClass.prometheus,Prometheus_spawnpoint);
 		for(int i=0; i<jetCount; i++)
 		{
-			addShip(ShipClass.jet,getRandomOffset());
+			addShip(ShipClass.jet,getRandomOffset(Prometheus_spawnpoint));
 		}
 	}
 
-	Vector3 getRandomOffset()
+	Vector3 getRandomOffset(Vector3 t)
 	{
-		Vector3 t = transform.position;
-
 		t += new Vector3(
 			Random.Range(-maxJetOffset,maxJetOffset),
 			Random.Range(-maxJetOffset,maxJetOffset),

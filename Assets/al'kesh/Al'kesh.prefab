@@ -34,39 +34,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Al'kesh
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
+    - target: {fileID: 2534866581884222612, guid: 5980b94c9fce58fe99e035459558d56e,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
