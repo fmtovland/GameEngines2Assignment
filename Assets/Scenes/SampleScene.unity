@@ -326,10 +326,15 @@ MonoBehaviour:
   jetCount: 30
   minJetOffset: 100
   maxJetOffset: 200
+  prometheus_maxspeed: 100
+  jet_maxspeed: 80
+  hatak_sg1_maxspeed: 75
   camera: {fileID: 963194225}
   Prometheus: {fileID: 4355061453884506287, guid: 971d97a47158e29d28fbde8e9e146be4,
     type: 3}
   Jet: {fileID: 7021297778295577716, guid: d4ce8dcdeb0dbc500b1a7ed3284ca649, type: 3}
+  Hatak_SG1: {fileID: 7297609634694996794, guid: 64f063ff45df53d549b6ed7b7c258d69,
+    type: 3}
 --- !u!4 &1192306144
 Transform:
   m_ObjectHideFlags: 0

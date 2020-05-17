@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ShipClass{prometheus,jet};
+public enum ShipClass{prometheus,jet,hatak_sg1};
 
 public struct Ship
 {
 	public GameObject body;
 	public ShipClass type;
+	public Boid boid;
 }
 
 public class TauriSpawner : MonoBehaviour
@@ -15,6 +16,10 @@ public class TauriSpawner : MonoBehaviour
 	public int jetCount=0;
 	public float minJetOffset=150;
 	public float maxJetOffset=200;
+	
+	public float prometheus_maxspeed;
+	public float jet_maxspeed;
+	public float hatak_sg1_maxspeed;
 
 	public GameObject camera;
 	int cameraTarget=-1;
@@ -23,12 +28,14 @@ public class TauriSpawner : MonoBehaviour
 
 	public GameObject Prometheus;
 	public GameObject Jet;
+	public GameObject Hatak_SG1;
 
 	public Dictionary<ShipClass,Vector3> cameraParams=
 		new Dictionary<ShipClass,Vector3>
 	{
 		{ShipClass.prometheus,new Vector3(0,200,-750)},
-		{ShipClass.jet,new Vector3(0,15,-40)}
+		{ShipClass.jet,new Vector3(0,15,-40)},
+		{ShipClass.hatak_sg1,new Vector3(0,25,-50)}
 	};
 
 	// Start is called before the first frame update
@@ -68,14 +75,25 @@ public class TauriSpawner : MonoBehaviour
 		{
 			case ShipClass.prometheus:
 				ship.body=Instantiate(Prometheus);
+				ship.boid=ship.body.GetComponent<Boid>();
+				ship.boid.maxSpeed=prometheus_maxspeed;
 				break;
 
 			case ShipClass.jet:
 				ship.body=Instantiate(Jet);
+				ship.boid=ship.body.GetComponent<Boid>();
+				ship.boid.maxSpeed=jet_maxspeed;
+				break;
+
+			case ShipClass.hatak_sg1:
+				ship.body=Instantiate(Hatak_SG1);
+				ship.boid=ship.body.GetComponent<Boid>();
+				ship.boid.maxSpeed=hatak_sg1_maxspeed;
 				break;
 
 			default:
 				Debug.Log("Tried to instanciate unimplemeted ship");
+				//return;
 				break;
 		}
 

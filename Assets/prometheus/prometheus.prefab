@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2495333331623314073}
   - component: {fileID: 2980016805916027327}
-  - component: {fileID: 750933862130017061}
   - component: {fileID: 6045055278834927409}
   - component: {fileID: 3213512293594065830}
   m_Layer: 0
@@ -57,29 +56,8 @@ MonoBehaviour:
   banking: 0.1
   damping: 0.1
   influencers:
-  - {fileID: 750933862130017061}
---- !u!114 &750933862130017061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4355061453884506287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19651b7afe5987b37b5e9447b67fbafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  path:
-  - {x: 500, y: 300, z: 500}
-  - {x: 500, y: 300, z: -500}
-  - {x: -500, y: 300, z: -500}
-  - {x: -500, y: 300, z: 500}
-  currentWaypoint: 0
-  arriveDistance: 10
-  seeker: {fileID: 3213512293594065830}
-  arriver: {fileID: 6045055278834927409}
+  - {fileID: 3213512293594065830}
+  - {fileID: 6045055278834927409}
 --- !u!114 &6045055278834927409
 MonoBehaviour:
   m_ObjectHideFlags: 0
