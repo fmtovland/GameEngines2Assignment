@@ -50,7 +50,7 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 50
+  maxSpeed: 120
   maxForce: 100
   speed: 0
   banking: 0.1

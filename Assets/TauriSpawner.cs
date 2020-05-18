@@ -38,11 +38,8 @@ public class TauriSpawner : Spawner
 		};
 
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
-		//spawnShips();
 		camOffsetPursue=camera.GetComponent<OffsetPursue>();
-		//camera.transform.position=ships[0].body.transform.position + cameraParams[ShipClass.hatak_sg1];
 		camera.transform.SetParent(ships[0].body.transform);
-		ships[0].body.GetComponentInChildren<OnEnterOutpostTriggerzone>().ts=this;
 		changeSpectateTarget(true);
 	}
 
@@ -68,7 +65,7 @@ public class TauriSpawner : Spawner
 		camera.GetComponent<CamScript>().target=ship.body;
 	}
 
-	public void spawnShips()
+	public override void spawnShips()
 	{
 		Vector3 offset;
 		int ship_id;

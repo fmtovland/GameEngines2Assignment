@@ -17,7 +17,7 @@ public class GoauldSpawner : Spawner
 		};
 	}
 	
-	void spawnShips()
+	public override void spawnShips()
 	{
 		for(int i=0; i<alkesh_count; i++)
 		{

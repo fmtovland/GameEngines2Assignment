@@ -42,4 +42,6 @@ public abstract class Spawner : MonoBehaviour
 
 		return t;
 	}
+	
+	public abstract void spawnShips();
 }
