@@ -8,6 +8,7 @@ public class Fighter : Boid
 	public int hitpoints;
 	public int ammunition;
 	public int time_between_shots;
+	public int max_distance_to_target=150;
 	public string enemy;
 
 	bool reloading=false;
@@ -23,7 +24,7 @@ public class Fighter : Boid
 
 		RaycastHit hit;
 		Ray ray = new Ray(transform.position, transform.forward);
-		if (Physics.Raycast(ray, out hit))
+		if (Physics.Raycast(ray, out hit, max_distance_to_target))
 		{
 			if (hit.collider != null && hit.collider.tag==enemy)
 			{
