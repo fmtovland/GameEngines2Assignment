@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  target: {x: 0, y: 300, z: 0}
+  target: {x: 0, y: 200, z: 0}
   slowingDistance: 10
 --- !u!114 &2883459987722157827
 MonoBehaviour:
@@ -61,25 +61,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3839912297704081063}
-  m_Material: {fileID: 13400000, guid: b6d04b8de259e919c92a1200f05fb323, type: 2}
-  m_IsTrigger: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 13.537105
-  m_Height: 9.370912
+  m_Radius: 5
+  m_Height: 7
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3989589295707449607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3839912297704081063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d6a24dfebdbdb31794e5392ca0b3301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &8095704375545362666
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -176,6 +164,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &3989589295707449607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839912297704081063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6a24dfebdbdb31794e5392ca0b3301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ts: {fileID: 0}
 --- !u!1001 &1614466086428342835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,6 +207,11 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 5980b94c9fce58fe99e035459558d56e,

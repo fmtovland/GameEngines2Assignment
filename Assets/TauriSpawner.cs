@@ -146,7 +146,6 @@ public class TauriSpawner : MonoBehaviour
 	{
 		foreach(Ship s in ships)
 		{
-			Debug.Log("beep");
 			if(s.type==ShipClass.jet)
 			{
 				s.body.GetComponent<OffsetPursue>().active=false;
