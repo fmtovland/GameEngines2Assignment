@@ -6,3 +6,4 @@ Creative Commons:
 TurboSquid Royalty Free License:
 	Jet Fighter model from turbosquid.com by sender pinarci: https://www.turbosquid.com/FullPreview/Index.cfm/ID/796916
 	pyramid model from turbosquid.com by jesusgeek94: https://turbosquid.com/FullPreview/Index.cfm/ID/381762
+	Missile model from terbosquid.com by Spectra_7: https://www.turbosquid.com/3d-models/rocket-ws-2-3d-model-1376760

@@ -2,24 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ShipClass{prometheus,jet,hatak_sg1};
-
-public struct Ship
-{
-	public GameObject body;
-	public ShipClass type;
-	public Boid boid;
-}
-
-public class TauriSpawner : MonoBehaviour
+public class TauriSpawner : Spawner
 {
 	public int jetCount=0;
 	public float minJetOffset=150;
 	public float maxJetOffset=200;
-	
-	public float prometheus_maxspeed;
-	public float jet_maxspeed;
-	public float hatak_sg1_maxspeed;
 	
 	public Vector3 SG1_spawnpoint;
 	public Vector3 Prometheus_spawnpoint;
@@ -27,8 +14,6 @@ public class TauriSpawner : MonoBehaviour
 	public GameObject camera;
 	int cameraTarget=-1;
 	OffsetPursue camOffsetPursue;
-
-	public List<Ship> ships=new List<Ship>();
 
 	public GameObject Prometheus;
 	public GameObject Jet;
@@ -45,6 +30,13 @@ public class TauriSpawner : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		shipPrefabs=new Dictionary<ShipClass,GameObject>
+		{
+			{ShipClass.prometheus,Prometheus},
+			{ShipClass.jet,Jet},
+			{ShipClass.hatak_sg1,Hatak_SG1}
+		};
+
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
 		//spawnShips();
 		camOffsetPursue=camera.GetComponent<OffsetPursue>();
@@ -76,41 +68,6 @@ public class TauriSpawner : MonoBehaviour
 		camera.GetComponent<CamScript>().target=ship.body;
 	}
 
-	int addShip(ShipClass sc,Vector3 pos)
-	{
-		Ship ship=new Ship();
-		ship.type=sc;
-
-		switch(sc)
-		{
-			case ShipClass.prometheus:
-				ship.body=Instantiate(Prometheus);
-				ship.boid=ship.body.GetComponent<Boid>();
-				ship.boid.maxSpeed=prometheus_maxspeed;
-				break;
-
-			case ShipClass.jet:
-				ship.body=Instantiate(Jet);
-				ship.boid=ship.body.GetComponent<Boid>();
-				ship.boid.maxSpeed=jet_maxspeed;
-				break;
-
-			case ShipClass.hatak_sg1:
-				ship.body=Instantiate(Hatak_SG1);
-				ship.boid=ship.body.GetComponent<Boid>();
-				ship.boid.maxSpeed=hatak_sg1_maxspeed;
-				break;
-
-			default:
-				Debug.Log("Tried to instanciate unimplemeted ship");
-				return -1;
-		}
-
-		ship.body.transform.position=pos;
-		ships.Add(ship);
-		return ships.Count-1;
-	}
-
 	public void spawnShips()
 	{
 		Vector3 offset;
@@ -119,27 +76,12 @@ public class TauriSpawner : MonoBehaviour
 		ships[prometheus_id].body.GetComponentInChildren<OnEnterOutpostPrometheus>().ts=this;
 		for(int i=0; i<jetCount; i++)
 		{
-			offset=getRandomOffset();
+			offset=getRandomOffset(minJetOffset,maxJetOffset);
 			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset);
 			OffsetPursue o=ships[ship_id].body.GetComponent<OffsetPursue>();
 			o.target=ships[prometheus_id].body;
 			o.offset=offset;
 		}
-	}
-
-	Vector3 getRandomOffset()
-	{
-		Vector3 t = new Vector3(
-			Random.Range(-maxJetOffset,maxJetOffset),
-			Random.Range(-maxJetOffset,maxJetOffset),
-			Random.Range(-maxJetOffset,maxJetOffset)
-		);
-
-		if(t.x<0) t.x-=minJetOffset; else t.x+=minJetOffset;
-		if(t.y<0) t.y-=minJetOffset; else t.y+=minJetOffset;
-		if(t.z<0) t.z-=minJetOffset; else t.z+=minJetOffset;
-
-		return t;
 	}
 	
 	public void setAttackMode()
