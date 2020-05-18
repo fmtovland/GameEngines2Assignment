@@ -7,6 +7,11 @@ public class OffsetPursue : Influencer
 	public Vector3 offset;
 	public GameObject target;
 	public Arrive arriver;
+	
+	void Start()
+	{
+		arriver=gameObject.AddComponent<Arrive>();
+	}
 
 	public override Vector3 GetForce(Boid boid)
 	{

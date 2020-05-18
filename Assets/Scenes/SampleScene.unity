@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194232}
   - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
@@ -313,7 +312,7 @@ MonoBehaviour:
   active: 1
   offset: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  arriver: {fileID: 963194232}
+  arriver: {fileID: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,21 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &963194232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f637b14da52b9558d5c249db2fc98b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  target: {x: 0, y: 0, z: 0}
-  slowingDistance: 50
 --- !u!1 &1192306142
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +556,7 @@ GameObject:
   - component: {fileID: 1901751668}
   - component: {fileID: 1901751667}
   - component: {fileID: 1901751666}
+  - component: {fileID: 1901751670}
   m_Layer: 0
   m_Name: Outpost_triggerzone
   m_TagString: outpost_triggerzone
@@ -653,3 +638,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901751670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901751665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d05527fbeca29b9e9cecce9f3792e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners:
+  - {fileID: 1192306143}
+  - {fileID: 1741178994}
