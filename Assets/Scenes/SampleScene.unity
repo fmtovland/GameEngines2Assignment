@@ -400,7 +400,7 @@ MonoBehaviour:
   maxJetOffset: 200
   prometheus_maxspeed: 100
   jet_maxspeed: 100
-  hatak_sg1_maxspeed: 75
+  hatak_sg1_maxspeed: 100
   SG1_spawnpoint: {x: 1000, y: 300, z: 0}
   Prometheus_spawnpoint: {x: 0, y: 300, z: -2000}
   camera: {fileID: 963194225}
