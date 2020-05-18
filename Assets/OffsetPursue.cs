@@ -11,7 +11,6 @@ public class OffsetPursue : Influencer
 	public override Vector3 GetForce(Boid boid)
 	{
 		Vector3 desired = Vector3.zero;
-		transform.LookAt(target.transform.position);
 
 		arriver.target = target.transform.position+offset;
 		desired+=arriver.GetForce(boid);

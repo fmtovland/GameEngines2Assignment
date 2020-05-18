@@ -73,6 +73,7 @@ public class TauriSpawner : MonoBehaviour
 		Ship ship = ships[(int)cameraTarget];
 		camOffsetPursue.target=ship.body;
 		camOffsetPursue.offset=cameraParams[ship.type];
+		camera.GetComponent<CamScript>().target=ship.body;
 	}
 
 	int addShip(ShipClass sc,Vector3 pos)
@@ -115,6 +116,7 @@ public class TauriSpawner : MonoBehaviour
 		Vector3 offset;
 		int ship_id;
 		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint);
+		ships[prometheus_id].body.GetComponentInChildren<OnEnterOutpostPrometheus>().ts=this;
 		for(int i=0; i<jetCount; i++)
 		{
 			offset=getRandomOffset();
@@ -138,5 +140,17 @@ public class TauriSpawner : MonoBehaviour
 		if(t.z<0) t.z-=minJetOffset; else t.z+=minJetOffset;
 
 		return t;
+	}
+	
+	public void setAttackMode()
+	{
+		foreach(Ship s in ships)
+		{
+			Debug.Log("beep");
+			if(s.type==ShipClass.jet)
+			{
+				s.body.GetComponent<OffsetPursue>().active=false;
+			}
+		}
 	}
 }

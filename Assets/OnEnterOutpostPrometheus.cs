@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnEnterOutpostTriggerzone : MonoBehaviour
+public class OnEnterOutpostPrometheus : MonoBehaviour
 {
 	public TauriSpawner ts;
 
 	public void OnTriggerEnter(Collider collider)
 	{
+		Debug.Log(collider.tag);
+
 		if(collider.CompareTag("outpost_triggerzone"))
 		{
-			GetComponent<LineRenderer>().enabled=true;
-			ts.spawnShips();
+			ts.setAttackMode();
 			Destroy(this);
 		}
 	}
