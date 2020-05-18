@@ -75,7 +75,7 @@ public class TauriSpawner : MonoBehaviour
 		camOffsetPursue.offset=cameraParams[ship.type];
 	}
 
-	void addShip(ShipClass sc,Vector3 pos)
+	int addShip(ShipClass sc,Vector3 pos)
 	{
 		Ship ship=new Ship();
 		ship.type=sc;
@@ -102,25 +102,32 @@ public class TauriSpawner : MonoBehaviour
 
 			default:
 				Debug.Log("Tried to instanciate unimplemeted ship");
-				return;
+				return -1;
 		}
 
 		ship.body.transform.position=pos;
 		ships.Add(ship);
+		return ships.Count-1;
 	}
 
 	public void spawnShips()
 	{
-		addShip(ShipClass.prometheus,Prometheus_spawnpoint);
+		Vector3 offset;
+		int ship_id;
+		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint);
 		for(int i=0; i<jetCount; i++)
 		{
-			addShip(ShipClass.jet,getRandomOffset(Prometheus_spawnpoint));
+			offset=getRandomOffset();
+			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset);
+			OffsetPursue o=ships[ship_id].body.GetComponent<OffsetPursue>();
+			o.target=ships[prometheus_id].body;
+			o.offset=offset;
 		}
 	}
 
-	Vector3 getRandomOffset(Vector3 t)
+	Vector3 getRandomOffset()
 	{
-		t += new Vector3(
+		Vector3 t = new Vector3(
 			Random.Range(-maxJetOffset,maxJetOffset),
 			Random.Range(-maxJetOffset,maxJetOffset),
 			Random.Range(-maxJetOffset,maxJetOffset)

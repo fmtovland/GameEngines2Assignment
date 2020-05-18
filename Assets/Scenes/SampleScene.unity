@@ -330,7 +330,7 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 120
+  maxSpeed: 1000
   maxForce: 10
   speed: 0
   banking: 0.1
@@ -399,7 +399,7 @@ MonoBehaviour:
   minJetOffset: 100
   maxJetOffset: 200
   prometheus_maxspeed: 100
-  jet_maxspeed: 80
+  jet_maxspeed: 100
   hatak_sg1_maxspeed: 75
   SG1_spawnpoint: {x: 1000, y: 300, z: 0}
   Prometheus_spawnpoint: {x: 0, y: 300, z: -2000}
@@ -556,7 +556,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901751665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

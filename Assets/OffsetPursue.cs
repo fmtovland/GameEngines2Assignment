@@ -7,7 +7,6 @@ public class OffsetPursue : Influencer
 	public Vector3 offset;
 	public GameObject target;
 	public Arrive arriver;
-	Transform transfoam;
 
 	public override Vector3 GetForce(Boid boid)
 	{
