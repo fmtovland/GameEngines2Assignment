@@ -39,7 +39,7 @@ public class Boid : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	protected void Update()
 	{
 		force = CalculateForce();
 		acceleration = force / mass;

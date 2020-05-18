@@ -8,12 +8,28 @@ public class Fighter : Boid
 	public int hitpoints;
 	public int ammunition;
 	public int time_between_shots;
+	public string enemy;
 
 	bool reloading=false;
 
 	void Start()
 	{
 		base.Start();
+	}
+	
+	void Update()
+	{
+		base.Update();
+
+		RaycastHit hit;
+		Ray ray = new Ray(transform.position, transform.forward);
+		if (Physics.Raycast(ray, out hit))
+		{
+			if (hit.collider != null && hit.collider.tag==enemy)
+			{
+				shoot(hit.collider.gameObject);
+			}
+		}
 	}
 	
 	public void shoot(GameObject target)
