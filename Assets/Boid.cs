@@ -22,7 +22,7 @@ public class Boid : MonoBehaviour
 	public Vector3 CalculateForce()
 	{
 		Vector3 force = Vector3.zero;
-		foreach(Influencer influencer in influencers) if(influencer.enabled)
+		foreach(Influencer influencer in influencers) if(influencer.active)
 		{
 			force+=influencer.GetForce(this);
 		}

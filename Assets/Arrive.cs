@@ -6,6 +6,7 @@ public class Arrive : Influencer
 {
 	public Vector3 target;
 	public float slowingDistance = 10;
+	public bool stop_on_arrival=true;
 
 	public override Vector3 GetForce(Boid boid)
 	{
@@ -15,6 +16,7 @@ public class Arrive : Influencer
 		if(dist<.1f)
 		{
 			boid.velocity=Vector3.zero;
+			if(stop_on_arrival) active=false;
 			return Vector3.zero;
 		}
 
