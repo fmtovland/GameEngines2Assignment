@@ -170,7 +170,6 @@ MonoBehaviour:
   force: {x: 0, y: 0, z: 0}
   mass: 1
   maxSpeed: 100
-  maxForce: 10
   speed: 0
   banking: 0.1
   damping: 0.1
@@ -187,6 +186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sg1-al'kesh
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5980b94c9fce58fe99e035459558d56e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5980b94c9fce58fe99e035459558d56e,
         type: 3}

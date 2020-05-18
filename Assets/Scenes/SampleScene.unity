@@ -330,7 +330,6 @@ MonoBehaviour:
   force: {x: 0, y: 0, z: 0}
   mass: 1
   maxSpeed: 250
-  maxForce: 10
   speed: 0
   banking: 0.1
   damping: 0.1
@@ -382,7 +381,7 @@ MonoBehaviour:
   minJetOffset: 150
   maxJetOffset: 200
   SG1_spawnpoint: {x: -1000, y: 200, z: 0}
-  Prometheus_spawnpoint: {x: 0, y: 350, z: 2000}
+  Prometheus_spawnpoint: {x: 0, y: 350, z: -2000}
   camera: {fileID: 963194225}
   Prometheus: {fileID: 4355061453884506287, guid: 971d97a47158e29d28fbde8e9e146be4,
     type: 3}
@@ -556,7 +555,6 @@ GameObject:
   - component: {fileID: 1901751668}
   - component: {fileID: 1901751667}
   - component: {fileID: 1901751666}
-  - component: {fileID: 1901751670}
   - component: {fileID: 1901751671}
   m_Layer: 0
   m_Name: Outpost_triggerzone
@@ -639,19 +637,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1901751670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901751665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d05527fbeca29b9e9cecce9f3792e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawners: []
 --- !u!114 &1901751671
 MonoBehaviour:
   m_ObjectHideFlags: 0

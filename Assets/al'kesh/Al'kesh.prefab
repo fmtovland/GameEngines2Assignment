@@ -16,12 +16,27 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 5
-  maxForce: 10
+  maxSpeed: 120
   speed: 0
   banking: 0.1
   damping: 0.1
-  influencers: []
+  influencers:
+  - {fileID: 3995840863970457266}
+--- !u!114 &3995840863970457266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839912297704081063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f637b14da52b9558d5c249db2fc98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  target: {x: 0, y: 350, z: 0}
+  slowingDistance: 10
 --- !u!1001 &1614466086428342835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,6 +48,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Al'kesh
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5980b94c9fce58fe99e035459558d56e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2534866581884222612, guid: 5980b94c9fce58fe99e035459558d56e,
         type: 3}

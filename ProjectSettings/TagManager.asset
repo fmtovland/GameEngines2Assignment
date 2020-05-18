@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - outpost_triggerzone
+  - goauld
+  - tauri
   layers:
   - Default
   - TransparentFX

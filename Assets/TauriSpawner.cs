@@ -35,9 +35,9 @@ public class TauriSpawner : Spawner
 			{ShipClass.jet,Jet},
 			{ShipClass.hatak_sg1,Hatak_SG1}
 		};
+		alligence_tag="tauri";
 
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
-		//camera.transform.SetParent(ships[0].body.transform);
 		changeSpectateTarget(true);
 	}
 
@@ -65,7 +65,7 @@ public class TauriSpawner : Spawner
 		camera.GetComponent<OffsetPursue>().target=ship.body;
 	}
 
-	public override void spawnShips()
+	public override void spawnArmy()
 	{
 		Vector3 offset;
 		int ship_id;
@@ -75,7 +75,7 @@ public class TauriSpawner : Spawner
 		{
 			offset=getRandomOffset(minJetOffset,maxJetOffset);
 			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset);
-			OffsetPursue o=ships[ship_id].body.GetComponent<OffsetPursue>();
+			OffsetPursue o=ships[ship_id].body.GetComponentInChildren<OffsetPursue>();
 			o.target=ships[prometheus_id].body;
 			o.offset=offset;
 		}
@@ -87,7 +87,7 @@ public class TauriSpawner : Spawner
 		{
 			if(s.type==ShipClass.jet)
 			{
-				s.body.GetComponent<OffsetPursue>().active=false;
+				s.body.GetComponentInChildren<OffsetPursue>().active=false;
 			}
 		}
 	}

@@ -11,7 +11,6 @@ public class Boid : MonoBehaviour
 
 	public float mass = 1.0f;
 	public float maxSpeed = 5;
-	public float maxForce = 10;
 	public float speed = 0;
 
 	[Range(0.0f, 10.0f)]
@@ -31,7 +30,7 @@ public class Boid : MonoBehaviour
 		return force;
 	}
 
-	void Start()
+	protected void Start()
 	{
 		foreach(Influencer influencer in influencers)
 		{

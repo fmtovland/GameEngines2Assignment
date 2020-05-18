@@ -10,7 +10,14 @@ public class SpawnArmies : MonoBehaviour
 	{
 		foreach(Spawner s in spawners)
 		{
-			s.spawnShips();
+			try
+			{
+				s.spawnArmy();
+			}
+			catch(System.Exception e)
+			{
+				Debug.LogException(e);
+			}
 		}
 		Destroy(this);
 	}

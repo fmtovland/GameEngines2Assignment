@@ -14,10 +14,7 @@ public class Chase : Influencer
 	
 	public override Vector3 GetForce(Boid boid)
 	{
-		Vector3 r=Vector3.zero;
 		seeker.target=target.transform.position;
-		//r=seeker.GetForce(Boid boid);
-		
-		return r;
+		return seeker.GetForce(boid);
 	}
 }
