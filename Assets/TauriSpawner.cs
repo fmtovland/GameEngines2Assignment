@@ -13,7 +13,6 @@ public class TauriSpawner : Spawner
 
 	public GameObject camera;
 	int cameraTarget=-1;
-	OffsetPursue camOffsetPursue;
 
 	public GameObject Prometheus;
 	public GameObject Jet;
@@ -38,8 +37,7 @@ public class TauriSpawner : Spawner
 		};
 
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
-		camOffsetPursue=camera.GetComponent<OffsetPursue>();
-		camera.transform.SetParent(ships[0].body.transform);
+		//camera.transform.SetParent(ships[0].body.transform);
 		changeSpectateTarget(true);
 	}
 
@@ -60,9 +58,11 @@ public class TauriSpawner : Spawner
 		else cameraTarget %= s;
 
 		Ship ship = ships[(int)cameraTarget];
+		OffsetPursue camOffsetPursue=camera.GetComponent<OffsetPursue>();
 		camOffsetPursue.target=ship.body;
 		camOffsetPursue.offset=cameraParams[ship.type];
 		camera.GetComponent<CamScript>().target=ship.body;
+		camera.GetComponent<OffsetPursue>().target=ship.body;
 	}
 
 	public override void spawnShips()
