@@ -22,7 +22,6 @@ public class SeekAndDestroy : Influencer
 
 		if (Physics.SphereCast(transform.position, seekrange, transform.forward, out hit, seekrange, enemy_layer))
 		{
-			Debug.Log(hit.collider.tag);
 			if (hit.collider != null)
 			{
 				chaser.target=hit.collider.gameObject;

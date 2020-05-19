@@ -71,12 +71,14 @@ MonoBehaviour:
   damping: 0.1
   influencers:
   - {fileID: 6045055278834927409}
-  missile: {fileID: 0}
-  hitpoints: 0
-  ammunition: 0
-  time_between_shots: 0
+  missile: {fileID: 8507274066872577310, guid: bb5572c563f37fa3abcd53e52be965fb, type: 3}
+  hitpoints: 1000
+  ammunition: 100
+  time_between_shots: 3
   max_distance_to_target: 150
   enemy: 
+  enemy_layer: 0
+  seek_and_destroy: 1
 --- !u!54 &5411410552480308065
 Rigidbody:
   m_ObjectHideFlags: 0

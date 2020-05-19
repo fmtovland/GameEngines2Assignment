@@ -33,10 +33,9 @@ public class Fighter : Boid
 		base.Update();
 
 		RaycastHit hit;
-		Ray ray = new Ray(transform.position, transform.forward);
-		if (Physics.Raycast(ray, out hit, max_distance_to_target))
+		if (Physics.SphereCast(transform.position, max_distance_to_target, transform.forward, out hit, max_distance_to_target, enemy_layer))
 		{
-			if (hit.collider != null && hit.collider.tag==enemy)
+			if (hit.collider != null)
 			{
 				shoot(hit.collider.gameObject);
 			}
@@ -48,7 +47,7 @@ public class Fighter : Boid
 		if(reloading) return;
 
 		GameObject missile1=Instantiate(missile);
-		missile.GetComponent<Chase>().target=target;
+		missile1.GetComponent<Chase>().target=target;
 		ammunition--;
 		StartCoroutine(cooldown());
 	}
