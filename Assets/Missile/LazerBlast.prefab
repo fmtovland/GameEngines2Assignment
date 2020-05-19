@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 857259294345579871}
   - component: {fileID: 1949814662748103604}
   - component: {fileID: 4997240211824476685}
+  - component: {fileID: 4039108502686577597}
   m_Layer: 0
   m_Name: LazerBlast
   m_TagString: Untagged
@@ -124,9 +125,23 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   mass: 1
-  maxSpeed: 5
+  maxSpeed: 120
   speed: 0
   banking: 0.1
   damping: 0.1
   influencers:
   - {fileID: 1949814662748103604}
+--- !u!114 &4039108502686577597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788047189163315884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1537d9dc1932bf764b3a4f1168608384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  timeout: 5

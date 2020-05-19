@@ -6,7 +6,7 @@ public class Fighter : Boid
 {
 	public GameObject missile;
 	public int hitpoints;
-	public int ammunition;
+	public int ammunition=0;
 	public int time_between_shots;
 	public int max_distance_to_target=150;
 	public string enemy;
@@ -46,10 +46,23 @@ public class Fighter : Boid
 	{
 		if(reloading) return;
 
-		GameObject missile1=Instantiate(missile);
-		missile1.GetComponent<Chase>().target=target;
-		ammunition--;
-		StartCoroutine(cooldown());
+		if(ammunition!=0)
+		{
+			GameObject missile1=Instantiate(missile);
+			Chase missileChaser=missile1.GetComponent<Chase>();
+			if(missileChaser!=null) missileChaser.target=target;
+			ammunition--;
+			StartCoroutine(cooldown());
+		}
+	}
+
+	public void Damage(int hitpoints)
+	{
+		this.hitpoints-=hitpoints;
+		if(this.hitpoints<=0)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	IEnumerator cooldown()

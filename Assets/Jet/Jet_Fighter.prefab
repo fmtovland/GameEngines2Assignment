@@ -157,7 +157,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  mass: 1
+  mass: 10
   maxSpeed: 120
   speed: 0
   banking: 0.1
@@ -170,3 +170,4 @@ MonoBehaviour:
   max_distance_to_target: 150
   enemy: 
   enemy_layer: 0
+  seek_and_destroy: 1
