@@ -14,4 +14,10 @@ public class Explosion : MonoBehaviour
 		transform.localScale += new Vector3(rate,rate,rate);
 		if(size<transform.localScale.y) Destroy(gameObject);
 	}
+	
+	void OnTriggerStay(Collider collider)
+	{
+		Fighter fighter=collider.gameObject.GetComponent<Fighter>();
+		fighter.Damage(1000);
+	}
 }
