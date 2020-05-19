@@ -8,7 +8,7 @@ public class Fighter : Boid
 	public int hitpoints;
 	public int ammunition=0;
 	public int time_between_shots;
-	public int max_distance_to_target=150;
+	public int max_distance_to_target=750;
 	public string enemy;
 	public int enemy_layer;
 	public bool seek_and_destroy=true;
@@ -42,7 +42,7 @@ public class Fighter : Boid
 			}
 		}
 
-		if(Vector3.Distance(transform.position,battlezone)>500)
+		if(Vector3.Distance(transform.position,battlezone)>1200)
 		{
 			transform.LookAt(battlezone);
 		}
