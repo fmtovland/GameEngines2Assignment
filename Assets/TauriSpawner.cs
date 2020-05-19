@@ -72,6 +72,7 @@ public class TauriSpawner : Spawner
 		Vector3 offset;
 		int ship_id;
 		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint,Quaternion.Euler(0,0,0));
+		ships[prometheus_id].body.GetComponent<Fighter>().seek_and_destroy=false;
 		for(int i=0; i<jetCount; i++)
 		{
 			offset=getRandomOffset(minJetOffset,maxJetOffset);

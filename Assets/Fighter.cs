@@ -11,16 +11,21 @@ public class Fighter : Boid
 	public int max_distance_to_target=150;
 	public string enemy;
 	public int enemy_layer;
+	public bool seek_and_destroy=true;
 
 	bool reloading=false;
 
 	void Start()
 	{
 		base.Start();
-		SeekAndDestroy seekndestroy=gameObject.AddComponent<SeekAndDestroy>();
-		seekndestroy.enemy_layer=enemy_layer;
-		seekndestroy.active=true;
-		influencers.Add(seekndestroy);
+		
+		if(seek_and_destroy)
+		{
+			SeekAndDestroy seekndestroy=gameObject.AddComponent<SeekAndDestroy>();
+			seekndestroy.enemy_layer=enemy_layer;
+			seekndestroy.active=true;
+			influencers.Add(seekndestroy);
+		}
 	}
 	
 	void Update()
