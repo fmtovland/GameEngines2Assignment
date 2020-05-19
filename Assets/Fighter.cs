@@ -48,9 +48,10 @@ public class Fighter : Boid
 
 		if(ammunition!=0)
 		{
-			GameObject missile1=Instantiate(missile);
+			GameObject missile1=Instantiate(missile,transform);
 			Chase missileChaser=missile1.GetComponent<Chase>();
 			if(missileChaser!=null) missileChaser.target=target;
+			missile1.GetComponent<Projectile>().friend_tag=this.tag;
 			ammunition--;
 			StartCoroutine(cooldown());
 		}

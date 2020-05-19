@@ -54,7 +54,7 @@ MonoBehaviour:
   missile: {fileID: 2788047189163315884, guid: c1926dfbb41e095a0b696646f924109f, type: 3}
   hitpoints: 150
   ammunition: -1
-  time_between_shots: 0
+  time_between_shots: 1
   max_distance_to_target: 150
   enemy: 
   enemy_layer: 0

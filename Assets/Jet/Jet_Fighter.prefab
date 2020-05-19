@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 4559102113142586719}
   - component: {fileID: 3820723452228954508}
   - component: {fileID: 5487439839290787196}
-  - component: {fileID: 600998743641021174}
-  - component: {fileID: 6688677173152473239}
   m_Layer: 9
   m_Name: default
   m_TagString: Untagged
@@ -80,36 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &600998743641021174
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565975207111096809}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &6688677173152473239
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565975207111096809}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 21
-  m_Height: 9.179999
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.9142205, z: -0.12690735}
 --- !u!1 &7021297778295577716
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6281379061530553959}
   - component: {fileID: 137746031658113341}
+  - component: {fileID: 843359014109650957}
+  - component: {fileID: 4883843415089596362}
   m_Layer: 9
   m_Name: Jet_Fighter
   m_TagString: Untagged
@@ -171,3 +141,33 @@ MonoBehaviour:
   enemy: 
   enemy_layer: 0
   seek_and_destroy: 1
+--- !u!136 &843359014109650957
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021297778295577716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 21
+  m_Height: 9.179999
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.91422, z: -0.1269073}
+--- !u!54 &4883843415089596362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021297778295577716}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
