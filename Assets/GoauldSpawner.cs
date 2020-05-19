@@ -28,8 +28,7 @@ public class GoauldSpawner : Spawner
 		for(int i=0; i<alkesh_count; i++)
 		{
 			offset=getRandomOffset(min_offset,max_offset);
-			s=addShip(ShipClass.alkesh,spawnpoint+offset);
-			ships[s].body.GetComponentInChildren<Arrive>().target=new Vector3(0,350,0) + offset;
+			s=addShip(ShipClass.alkesh,spawnpoint+offset,Quaternion.Euler(0,180,0));
 		}
 	}
 }

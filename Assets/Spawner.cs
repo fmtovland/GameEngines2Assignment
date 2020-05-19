@@ -19,7 +19,7 @@ public abstract class Spawner : MonoBehaviour
 	protected string enemy_tag;
 	protected int enemy_layer;
 	
-	protected int addShip(ShipClass sc,Vector3 pos)
+	protected int addShip(ShipClass sc,Vector3 pos,Quaternion rot)
 	{
 		Ship ship=new Ship();
 		ship.type=sc;
@@ -27,9 +27,10 @@ public abstract class Spawner : MonoBehaviour
 		ship.body=Instantiate(shipPrefabs[sc]);
 		ship.boid=ship.body.GetComponent<Boid>();
 		ship.body.transform.position=pos;
+		ship.body.transform.rotation=rot;
 		ship.body.tag=alligence_tag;
 
-		Fighter fighter=ship.body.GetComponent<Fighter>();
+		Fighter fighter=ship.body.GetComponentInChildren<Fighter>();
 		if(fighter!=null)
 		{
 			fighter.enemy=enemy_tag;

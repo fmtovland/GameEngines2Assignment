@@ -39,7 +39,7 @@ public class TauriSpawner : Spawner
 		enemy_tag="goauld";
 		enemy_layer=1<<8;
 
-		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
+		addShip(ShipClass.hatak_sg1,SG1_spawnpoint,Quaternion.Euler(0,90,0));
 		changeSpectateTarget(true);
 	}
 
@@ -71,11 +71,11 @@ public class TauriSpawner : Spawner
 	{
 		Vector3 offset;
 		int ship_id;
-		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint);
+		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint,Quaternion.Euler(0,0,0));
 		for(int i=0; i<jetCount; i++)
 		{
 			offset=getRandomOffset(minJetOffset,maxJetOffset);
-			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset);
+			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset,Quaternion.Euler(0,0,0));
 			ships[ship_id].body.transform.position=ships[ship_id].body.transform.position;
 		}
 	}
