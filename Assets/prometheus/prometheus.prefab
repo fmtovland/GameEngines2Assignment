@@ -48,6 +48,7 @@ MonoBehaviour:
   active: 1
   target: {x: 0, y: 350, z: 0}
   slowingDistance: 10
+  stop_on_arrival: 1
 --- !u!114 &-9198327921098374759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,8 @@ MonoBehaviour:
   hitpoints: 0
   ammunition: 0
   time_between_shots: 0
+  max_distance_to_target: 150
+  enemy: 
 --- !u!54 &5411410552480308065
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104,19 +107,6 @@ CapsuleCollider:
   m_Height: 258.39548
   m_Direction: 1
   m_Center: {x: 160.36186, y: 0.0000019289173, z: 4.2811394}
---- !u!114 &8054403765307880256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6845103325192598182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7d5d5bda86bf64e9e211819f3705ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ts: {fileID: 0}
 --- !u!1001 &3305461958970207151
 PrefabInstance:
   m_ObjectHideFlags: 0

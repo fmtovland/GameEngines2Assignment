@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamScript : MonoBehaviour
+public class CamScript : OffsetPursue
 {
-	public GameObject target;
-
 	void Update()
 	{
 		transform.LookAt(target.transform.position);

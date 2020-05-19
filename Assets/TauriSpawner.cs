@@ -70,7 +70,6 @@ public class TauriSpawner : Spawner
 		Vector3 offset;
 		int ship_id;
 		int prometheus_id=addShip(ShipClass.prometheus,Prometheus_spawnpoint);
-		ships[prometheus_id].body.GetComponentInChildren<OnEnterOutpostPrometheus>().ts=this;
 		for(int i=0; i<jetCount; i++)
 		{
 			offset=getRandomOffset(minJetOffset,maxJetOffset);
@@ -78,6 +77,7 @@ public class TauriSpawner : Spawner
 			OffsetPursue o=ships[ship_id].body.GetComponentInChildren<OffsetPursue>();
 			o.target=ships[prometheus_id].body;
 			o.offset=offset;
+			ships[ship_id].body.transform.position=ships[ship_id].body.transform.position+new Vector3(0,0,-100);
 		}
 	}
 	
