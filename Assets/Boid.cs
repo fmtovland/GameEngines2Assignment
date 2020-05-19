@@ -17,7 +17,7 @@ public class Boid : MonoBehaviour
 	public float banking = 0.1f;
 	public float damping = 0.1f;
 
-	public Influencer[] influencers;
+	public List<Influencer> influencers;
 
 	public Vector3 CalculateForce()
 	{

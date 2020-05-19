@@ -36,6 +36,8 @@ public class TauriSpawner : Spawner
 			{ShipClass.hatak_sg1,Hatak_SG1}
 		};
 		alligence_tag="tauri";
+		enemy_tag="goauld";
+		enemy_layer=1<<8;
 
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint);
 		changeSpectateTarget(true);
@@ -74,10 +76,7 @@ public class TauriSpawner : Spawner
 		{
 			offset=getRandomOffset(minJetOffset,maxJetOffset);
 			ship_id=addShip(ShipClass.jet,Prometheus_spawnpoint+offset);
-			OffsetPursue o=ships[ship_id].body.GetComponentInChildren<OffsetPursue>();
-			o.target=ships[prometheus_id].body;
-			o.offset=offset;
-			ships[ship_id].body.transform.position=ships[ship_id].body.transform.position+new Vector3(0,0,-100);
+			ships[ship_id].body.transform.position=ships[ship_id].body.transform.position;
 		}
 	}
 	

@@ -16,6 +16,8 @@ public abstract class Spawner : MonoBehaviour
 	public List<Ship> ships=new List<Ship>();
 	protected Dictionary<ShipClass,GameObject> shipPrefabs;
 	protected string alligence_tag;
+	protected string enemy_tag;
+	protected int enemy_layer;
 	
 	protected int addShip(ShipClass sc,Vector3 pos)
 	{
@@ -26,6 +28,14 @@ public abstract class Spawner : MonoBehaviour
 		ship.boid=ship.body.GetComponent<Boid>();
 		ship.body.transform.position=pos;
 		ship.body.tag=alligence_tag;
+
+		Fighter fighter=ship.body.GetComponent<Fighter>();
+		if(fighter!=null)
+		{
+			fighter.enemy=enemy_tag;
+			fighter.enemy_layer=enemy_layer;
+		}
+
 		ships.Add(ship);
 		return ships.Count-1;
 	}

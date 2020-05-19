@@ -16,6 +16,8 @@ public class GoauldSpawner : Spawner
 			{ShipClass.alkesh, alkesh}
 		};
 		alligence_tag="goauld";
+		enemy_tag="tauri";
+		enemy_layer=1<<9;
 	}
 	
 	public override void spawnArmy()
