@@ -6,6 +6,7 @@ public class Explosion : MonoBehaviour
 {
 	public float size=2;
 	public float rate=10;
+	public int damage;
 
 	// Update is called once per frame
 	void Update()
@@ -18,6 +19,6 @@ public class Explosion : MonoBehaviour
 	void OnTriggerStay(Collider collider)
 	{
 		Fighter fighter=collider.gameObject.GetComponent<Fighter>();
-		fighter.Damage(1000);
+		fighter.Damage(damage);
 	}
 }
