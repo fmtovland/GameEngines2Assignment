@@ -12,6 +12,7 @@ public class Fighter : Boid
 	public string enemy;
 	public int enemy_layer;
 	public bool seek_and_destroy=true;
+	public Vector3 battlezone=new Vector3(0,400,0);
 
 	bool reloading=false;
 
@@ -39,6 +40,11 @@ public class Fighter : Boid
 			{
 				shoot(hit.collider.gameObject);
 			}
+		}
+
+		if(Vector3.Distance(transform.position,battlezone)>500)
+		{
+			transform.LookAt(battlezone);
 		}
 	}
 	
