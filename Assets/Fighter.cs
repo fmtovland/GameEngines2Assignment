@@ -62,7 +62,7 @@ public class Fighter : Boid
 		this.hitpoints-=hitpoints;
 		if(this.hitpoints<=0)
 		{
-			Destroy(gameObject);
+			transform.Find("Explosion").gameObject.SetActive(true);
 		}
 	}
 

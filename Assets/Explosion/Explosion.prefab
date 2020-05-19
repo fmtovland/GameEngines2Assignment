@@ -105,5 +105,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8738c6d92b4b2dbbe94a8ffff129ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 800
+  size: 100
   rate: 10
