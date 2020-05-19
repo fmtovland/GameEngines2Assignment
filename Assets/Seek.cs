@@ -10,6 +10,7 @@ public class Seek : Influencer
 	{
 		Vector3 toTarget = target - boid.transform.position;
 		Vector3 desired = toTarget.normalized * boid.maxSpeed;
+		boid.transform.LookAt(target);
 
 		return desired - boid.velocity;
 	}

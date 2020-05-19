@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnArmies : MonoBehaviour
 {
 	public Spawner[] spawners;
-	public Vector3 vantagePoint;
 	
 	public void OnTriggerEnter(Collider collider)
 	{

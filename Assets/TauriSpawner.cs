@@ -11,8 +11,6 @@ public class TauriSpawner : Spawner
 	public Vector3 SG1_spawnpoint;
 	public Vector3 Prometheus_spawnpoint;
 
-	public CamScript camera;
-
 	public GameObject Prometheus;
 	public GameObject Jet;
 	public GameObject Hatak_SG1;
