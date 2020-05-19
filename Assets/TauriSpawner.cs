@@ -11,8 +11,7 @@ public class TauriSpawner : Spawner
 	public Vector3 SG1_spawnpoint;
 	public Vector3 Prometheus_spawnpoint;
 
-	public GameObject camera;
-	int cameraTarget=-1;
+	public CamScript camera;
 
 	public GameObject Prometheus;
 	public GameObject Jet;
@@ -40,31 +39,6 @@ public class TauriSpawner : Spawner
 		enemy_layer=1<<8;
 
 		addShip(ShipClass.hatak_sg1,SG1_spawnpoint,Quaternion.Euler(0,90,0));
-		changeSpectateTarget(true);
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		if(Input.GetKeyDown("left")) changeSpectateTarget(false);
-		if(Input.GetKeyDown("right")) changeSpectateTarget(true);
-	}
-
-	void changeSpectateTarget(bool up)
-	{
-		if(up) cameraTarget++;
-		else cameraTarget--;
-
-		int s = ships.Count;
-		if(cameraTarget<0) cameraTarget+=s;
-		else cameraTarget %= s;
-
-		Ship ship = ships[(int)cameraTarget];
-		OffsetPursue camOffsetPursue=camera.GetComponent<OffsetPursue>();
-		camOffsetPursue.target=ship.body;
-		camOffsetPursue.offset=cameraParams[ship.type];
-		camera.GetComponent<CamScript>().target=ship.body;
-		camera.GetComponent<OffsetPursue>().target=ship.body;
 	}
 
 	public override void spawnArmy()
