@@ -12,4 +12,12 @@ The majority of the excercise consists of a ship throwing out a sphere cast to f
 
 Fighters have hitpoints, and when they run out they explode. Explosions damage ships that are caught by them.
 
+# Story
 
+This is a recreation of the battle of antartica seen here [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/XKvLHLqPUQc/0.jpg)](https://www.youtube.com/watch?v=XKvLHLqPUQc)
+
+The prometheus and jets arrive to protect sg1's tel'tak from the gaould. After SG1 completes their mission the teltak flies off and the drones rise from the earth to destroy the gaould fleet
+
+# Visuals
+
+The explosions are orange spheres that expand in size then self delete. The missiles and lasers are boids like the ships. A list of where my models came from may be found in Assets/Licences.md. They all either came from either sketchfab or turbosquid. The snow is the jet's camo texture. 
