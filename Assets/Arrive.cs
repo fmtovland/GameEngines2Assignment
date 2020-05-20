@@ -10,7 +10,7 @@ public class Arrive : Influencer
 
 	public override Vector3 GetForce(Boid boid)
 	{
-		slowingDistance = 10 + boid.speed;
+		slowingDistance = 2 * boid.speed;
 		Vector3 toTarget = target - boid.transform.position;
 		float dist = toTarget.magnitude;
 		if(dist<.1f)
