@@ -14,7 +14,9 @@ Fighters have hitpoints, and when they run out they explode. Explosions damage s
 
 # Story
 
-This is a recreation of the battle of antartica seen here [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/XKvLHLqPUQc/0.jpg)](https://www.youtube.com/watch?v=XKvLHLqPUQc)
+This is a recreation of the battle of antartica seen here 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/XKvLHLqPUQc/0.jpg)](https://www.youtube.com/watch?v=XKvLHLqPUQc)
 
 The prometheus and jets arrive to protect sg1's tel'tak from the gaould. After SG1 completes their mission the teltak flies off and the drones rise from the earth to destroy the gaould fleet
 
