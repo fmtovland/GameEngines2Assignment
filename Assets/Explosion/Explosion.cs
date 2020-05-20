@@ -13,7 +13,7 @@ public class Explosion : MonoBehaviour
 	{
 		float growth=rate*Time.deltaTime;
 		transform.localScale += new Vector3(rate,rate,rate);
-		if(size<transform.localScale.y) Destroy(gameObject);
+		if(size<transform.localScale.y) Destroy(transform.root.gameObject);
 	}
 	
 	void OnTriggerStay(Collider collider)
