@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alkesh_count: 30
   alkesh: {fileID: 7297609634694996794, guid: 608044f2a457a7ba3959fedfb550ee20, type: 3}
-  spawnpoint: {x: 0, y: 350, z: 2000}
+  spawnpoint: {x: 0, y: 350, z: 3000}
   min_offset: 0
   max_offset: 200
 --- !u!1 &1901751665
