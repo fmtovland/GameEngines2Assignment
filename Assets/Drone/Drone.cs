@@ -17,19 +17,4 @@ public class Drone : Boid
 		seeker.target=target;
 		influencers.Add(seeker);
 	}
-
-	void Update()
-	{
-		base.Update();
-
-		RaycastHit hit;
-		if(Physics.SphereCast(transform.position, max_distance_to_target, transform.forward, out hit, max_distance_to_target))
-		{
-			Debug.Log("<3");
-			if (hit.collider != null)
-			{
-				seeker.target=hit.collider.transform.position;
-			}
-		}
-	}
 }

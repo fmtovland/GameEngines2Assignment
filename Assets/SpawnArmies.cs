@@ -5,9 +5,14 @@ using UnityEngine;
 public class SpawnArmies : MonoBehaviour
 {
 	public Spawner[] spawners;
-	
+	public GameObject drone;
+	public float drone_spawn_delay;
+
+	bool triggered=false;
+
 	public void OnTriggerEnter(Collider collider)
 	{
+		if(triggered) return;
 		foreach(Spawner s in spawners)
 		{
 			try
@@ -20,6 +25,19 @@ public class SpawnArmies : MonoBehaviour
 			}
 		}
 
-		Destroy(this);
+		StartCoroutine(spawnDrones());
+		triggered=true;
+	}
+	
+	IEnumerator spawnDrones()
+	{
+		yield return new WaitForSeconds(drone_spawn_delay);
+
+		for(int i=0; i<100; i++)
+		{
+			Drone d=Instantiate(drone).GetComponent<Drone>();
+			d.target=new Vector3(0,1000,0);
+			yield return new WaitForSeconds(.1f);
+		}
 	}
 }
