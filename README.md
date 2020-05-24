@@ -1,3 +1,15 @@
+# Instructions
+
+Just press run. There is no stitching together involved, but you will need to manually control the camera. press RT to go forward. the left stick will let you turn up down left or right. the right stick will allow you to rotate on the Z axis.
+
+# How it works
+
+Covered in Approach below.
+
+# What I am most proud of in the assignment
+
+I'm just glad that I managed to make everything run as a continuous sequence, using a mixture of triggers, timers and other tricks. The visuals to my eye look pretty good. The waves of lazers launched by the goauld make it feel remotely like a space battle. The explosions were extremely fun to make, and while they could look more realistic, they can really turn the tide of battle by a chain of them destroying a crowd of ships who were all focusing down a single target.
+
 # Overview
 
 The approach taken to mixing and matching behaviours, or influencers as I in my infinite wisdom decided they should be called, is at best messy. Back when the intrim was submitted the assumption was multiple behaviours could be heaped upon the boid at the prefab level. However, when it came time to code the behaviours, it became apparant being able to access behaviours directly with other behaviours or better still being able to implement multiple behaviours within a behaviour seemed advantagous. As such both architectures are used interchangably, and there is no way to find whether they are assigned at the prefab level or if the boid was subclassed and default behaviours added. I appologise. 
